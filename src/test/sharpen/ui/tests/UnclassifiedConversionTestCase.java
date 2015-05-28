@@ -20,9 +20,9 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA. */
 
 package sharpen.ui.tests;
-import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.*;
 
 import sharpen.core.*;
 
@@ -187,11 +187,18 @@ public class UnclassifiedConversionTestCase extends AbstractConversionTestCase {
 		runResourceTestCase("For2");
 	}
 
-    @Test
-    public void testForWithMultipleInitializers() throws Throwable {
-        runResourceTestCase("For3");
-    }
-	
+  @Test
+  public void testForWithMultipleInitializers() throws Throwable {
+      runResourceTestCase("For3");
+  }
+
+  //TODO: Fix #13
+  @Ignore("Unfixed bug: https://github.com/mono/sharpen/issues/13") 
+  @Test 
+  public void testForScopeBug() throws Throwable {
+    runResourceTestCase("For4");
+  }
+
 	@Test
 	public void testGetClass() throws Throwable {
 		runResourceTestCase("GetClass1");
